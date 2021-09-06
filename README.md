@@ -85,6 +85,6 @@ geth attach http://127.0.0.1:8546
 Change to deploy the app to BSC Testnet because the Geth has sync issues
 ```
 Reference: 
-https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c111ab2
 https://docs.binance.org/smart-chain/developer/deploy/truffle.html
+https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c111ab2
 ```

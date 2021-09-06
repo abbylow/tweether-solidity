@@ -1,6 +1,7 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+// Store your 12 word mnemonic seed phrase in .secretfile
+const mnemonic = fs.readFileSync(".secretfile").toString().trim(); //WARN: Don't push your .secretfile to source control repo
 console.log('mnemonic ', mnemonic)
 module.exports = {
   networks: {
@@ -9,6 +10,7 @@ module.exports = {
       port: 8545,
       network_id: "*",
     },
+    // Didn't use Geth to deploy to ropsten
     // ropsten: {
     //   host: "localhost",
     //   port: 8546,

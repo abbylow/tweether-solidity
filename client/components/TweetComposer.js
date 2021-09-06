@@ -1,4 +1,5 @@
 import React from "react"
+import { toast } from 'react-toastify'
 import {createTweet} from '../web3/tweets'
 import Button from './Button'
 
@@ -17,11 +18,27 @@ export default class ComposeModal extends React.Component {
         const {text} = this.state
         const {onClose} = this.props
 
-        await createTweet(text)
+        let toastId = null
 
-        alert("Your tweet was posted!")
+        try {
+            toastId = toast.info("Your tweet is being posted. This will take a couple of seconds...")
 
-        onClose()
+            await createTweet(text)
+
+            toast.update(toastId, {
+                render: "Your tweet has been posted!",
+                type: toast.TYPE.SUCCESS,
+                autoClose: 4000
+            })
+
+            onClose()
+        } catch (err) {
+            toast.update(toastId, {
+                render: "Sorry, we couldn't post your tweet!",
+                type: toast.TYPE.ERROR,
+                autoClose: 4000
+            })
+        }
     }
 
     render() {
