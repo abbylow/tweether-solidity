@@ -53,6 +53,7 @@ export default class RegistrationForm extends React.Component {
         username: "",
         gravatarEmail: "",
         bio: "",
+        isLoading: false,
     }
 
     updateField = (fieldName, e) => {
@@ -67,32 +68,47 @@ export default class RegistrationForm extends React.Component {
 
         // validation checks
         for(let key in this.state) {
-            if (!this.state[key]) {
+            if (!this.state[key] && key !== 'isLoading') {
                 return alert(`You must fill in your ${key}`)
             }
         }
 
         const { firstName, lastName, username, bio, gravatarEmail } = this.state
 
+        this.setState({
+            isLoading: true,
+        })
+
         try {
             // Open MetaMask modal
+            alert("Your account is being created. This will take a couple of seconds...")
             await createUser({username, firstName, lastName, bio, gravatarEmail})
 
             alert("Your account has been created!")
+            this.setState({
+                isLoading: false,
+            })
             this.props.onClose()
-
+            location.reload()
         } catch (err) {
             alert(`Sorry, fail to create your account: ${err}`)
+            this.setState({
+                isLoading: false,
+            })
         }
 
     }
 
     render() {
+        const {isLoading} = this.state
+
         return (
             <form onSubmit={this.createUser}>
                 <h3>
                     Create your account
                 </h3>
+
+                {isLoading && <h5>Posting...</h5>}
 
                 <Input
                     title="First name"

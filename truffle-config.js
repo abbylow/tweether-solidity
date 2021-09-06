@@ -2,7 +2,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 // Store your 12 word mnemonic seed phrase in .secretfile
 const mnemonic = fs.readFileSync(".secretfile").toString().trim(); //WARN: Don't push your .secretfile to source control repo
-console.log('mnemonic ', mnemonic)
+
 module.exports = {
   networks: {
     development: {

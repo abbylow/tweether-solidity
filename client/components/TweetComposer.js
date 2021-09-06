@@ -1,49 +1,47 @@
 import React from "react"
-import { toast } from 'react-toastify'
 import {createTweet} from '../web3/tweets'
 import Button from './Button'
 
 export default class ComposeModal extends React.Component {
     state = {
         text: "",
+        isLoading: false,
     }
 
     handleChange = e => {
         this.setState({
             text: e.target.value,
-        });
+        })
     }
 
     post = async () => {
         const {text} = this.state
         const {onClose} = this.props
 
-        let toastId = null
+        this.setState({
+            isLoading: true,
+        })
 
         try {
-            toastId = toast.info("Your tweet is being posted. This will take a couple of seconds...")
-
+            alert("Your tweet is being posted. This will take a couple of seconds...")
             await createTweet(text)
-
-            toast.update(toastId, {
-                render: "Your tweet has been posted!",
-                type: toast.TYPE.SUCCESS,
-                autoClose: 4000
+            alert("Your tweet was posted!")
+            this.setState({
+                isLoading: false,
             })
-
-            onClose()
+            location.reload()
         } catch (err) {
-            toast.update(toastId, {
-                render: "Sorry, we couldn't post your tweet!",
-                type: toast.TYPE.ERROR,
-                autoClose: 4000
+            alert("Sorry, we couldn't post your tweet!")
+            this.setState({
+                isLoading: false,
             })
         }
+
+        onClose()
     }
 
     render() {
-        const {onClose} = this.props
-        const {text} = this.state
+        const {text, isLoading} = this.state
 
         const disabled = (text === "")
 
@@ -53,7 +51,10 @@ export default class ComposeModal extends React.Component {
                     Post a new tweet
                 </h3>
 
+                {isLoading && <h5>Posting...</h5>}
+
                 <textarea
+                    disabled={isLoading}
                     value={text}
                     onChange={this.handleChange}
                     maxLength={140}
