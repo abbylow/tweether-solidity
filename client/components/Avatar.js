@@ -19,22 +19,22 @@ export default ({email, size = 32}) => {
             }
 
             <style jsx>{`
-        .avatar {
-          display: inline-block;
-          vertical-align: middle;
-          width: ${size}px;
-          height: ${size}px;
-        }
-        .avatar :global(svg) {
-          width: 100%;
-          height: 100%;
-        }
-        .avatar img {
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-        }
-      `}</style>
+                .avatar {
+                  display: inline-block;
+                  vertical-align: middle;
+                  width: ${size}px;
+                  height: ${size}px;
+                }
+                .avatar :global(svg) {
+                  width: 100%;
+                  height: 100%;
+                }
+                .avatar img {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 50%;
+                }
+              `}</style>
         </div>
     )
 }

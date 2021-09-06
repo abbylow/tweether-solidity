@@ -1,8 +1,6 @@
 import { eth, getInstance } from './provider'
-
 import TweetStorage from "./artifacts/TweetStorage.json"
 import TweetController from "./artifacts/TweetController.json"
-
 import { getUserInfo } from './users'
 
 export const createTweet = async (text) => {
@@ -14,11 +12,7 @@ export const createTweet = async (text) => {
         const addresses = await eth.getAccounts()
 
         // "createTweet" wants both the user ID and the text as params for now:
-        const result = await controller.createTweet(
-            text,
-            {
-                from: addresses[0],
-            })
+        const result = await controller.createTweet(text, {from: addresses[0]})
 
         return result
     } catch (err) {

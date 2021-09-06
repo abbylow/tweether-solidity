@@ -1,9 +1,7 @@
 import React from 'react'
 import {withRouter} from 'next/router'
-
 import {Page, Center} from '../components/Layout'
 import Avatar from '../components/Avatar'
-
 import {getUserIdFromUsername, getUserInfo} from '../web3/users'
 import { getTweetIdsFromUser, getTweetInfo, loadTweetsFromTweetPromises } from '../web3/tweets'
 import TweetList from "../components/TweetList"
@@ -59,22 +57,22 @@ class ProfilePage extends React.Component {
                     {username && (
                         <div>
                             <div className="profile-top">
-                            <div className="info">
-                                <h1>
-                                    {firstName} {lastName}
-                                </h1>
-                                <p className="username">
-                                    @{username}
-                                </p>
-                                <p className="desc">
-                                    {bio}
-                                </p>
+                                <div className="info">
+                                    <h1>
+                                        {firstName} {lastName}
+                                    </h1>
+                                    <p className="username">
+                                        @{username}
+                                    </p>
+                                    <p className="desc">
+                                        {bio}
+                                    </p>
+                                </div>
+                                <Avatar
+                                    size={AVATAR_SIZE}
+                                    email={gravatarEmail}
+                                />
                             </div>
-                            <Avatar
-                                size={AVATAR_SIZE}
-                                email={gravatarEmail}
-                            />
-                        </div>
                             <h2>
                                 {firstName}'s tweets ({tweets.length})
                             </h2>
@@ -114,7 +112,6 @@ class ProfilePage extends React.Component {
                     margin-top: 70px;
                   }
                 `}</style>
-
             </Page>
         )
     }

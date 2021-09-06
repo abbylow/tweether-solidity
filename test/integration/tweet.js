@@ -6,13 +6,6 @@ const utils = require('../utils')
 const { assertVMException } = utils
 
 contract('tweets', () => {
-
-    // will re-add using controller later
-    // before(async() => {
-    //     const tweetStorage = await TweetStorage.deployed()
-    //     await tweetStorage.createTweet(1, "Hello world!")
-    // })
-
     before(async() => {
         const userCtrl = await UserController.deployed()
 

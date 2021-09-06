@@ -2,10 +2,6 @@ const UserStorage = artifacts.require('UserStorage');
 const UserController = artifacts.require('UserController');
 // integration tests (in JavaScript) are a great way to verify the behaviour of our contracts from a user's perspective
 
-// ganache-cli
-// truffle test
-
-
 const utils = require('../utils')
 const { assertVMException } = utils
 
@@ -14,10 +10,6 @@ contract('users', () => {
         const storage = await UserStorage.deployed()
 
         try {
-            // const username = web3.utils.fromAscii("tristan")
-            // // Note that if storage.createUser(username) doesn't throw an error, we intentionally make the test fail with assert.fail().
-            // await storage.createUser(username)
-
             const tx = await storage.createUser(0x0, "tristan", "Tristan", "Edwards", "I like building stuff", "lala@la.com")
             assert.fail()
         } catch(err) {
@@ -42,7 +34,6 @@ contract('users', () => {
         const userId = 1
 
         // Get the userInfo array
-        // const userInfo = await storage.getUserFromId.call(userId)
         const userInfo = await storage.profiles.call(userId)
 
         // Get the second element (the username)
