@@ -82,5 +82,9 @@ geth attach http://127.0.0.1:8546
 > eth.getBalance(YOUR_ADDRESS)
 ```
 
-Face issue when syncing Geth?
-
+Change to deploy the app to BSC Testnet because the Geth has sync issues
+```
+Reference: 
+https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c111ab2
+https://docs.binance.org/smart-chain/developer/deploy/truffle.html
+```

@@ -1,3 +1,7 @@
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
+console.log('mnemonic ', mnemonic)
 module.exports = {
   networks: {
     development: {
@@ -5,13 +9,20 @@ module.exports = {
       port: 8545,
       network_id: "*",
     },
-    ropsten: {
-      host: "localhost",
-      port: 8546,
-      network_id: "3",
-      from: "0xdaaf64e6885a734eb93d44f6349ab5ca42977806",
-      gas: 4600000,
-    }
+    // ropsten: {
+    //   host: "localhost",
+    //   port: 8546,
+    //   network_id: "3",
+    //   from: "0xdaaf64e6885a734eb93d44f6349ab5ca42977806",
+    //   gas: 4600000,
+    // }
+    testnet: {
+      provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+      network_id: 97,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
   },
   compilers: {
     solc: {
