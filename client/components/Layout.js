@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from './Header'
-import Toast from "./Toast.js"
 
 export const Page = ({children}) => (
     <div>
@@ -13,8 +12,6 @@ export const Page = ({children}) => (
         <main>
             {children}
         </main>
-
-        <Toast />
 
         <style global jsx>{`
           * {
