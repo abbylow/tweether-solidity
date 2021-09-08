@@ -2,7 +2,7 @@
 This is a tutorial project to build a decentralized, uncensorable Twitter clone using Solidity.
 [Tutorial link](https://www.ludu.co/course/ethereum/interface-with-react)
 
-##How to run this project
+## How to run this project
 
 To start local ethereum (ensure this is running at the background during development)
 ```
@@ -88,7 +88,7 @@ geth attach http://127.0.0.1:8546
 > eth.getBalance(YOUR_ADDRESS)
 ```
 
-###Issue
+### Issue
 When I use Geth to deploy, I met a sync issue so the wallet balance is always zero and can't get enough fund to deploy. 
 Thus, I decided to change to deploy the app to BSC Testnet. 
 
@@ -98,7 +98,7 @@ https://docs.binance.org/smart-chain/developer/deploy/truffle.html
 https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c111ab2
 ```
 
-###To deploy using Heroku
+### To deploy using Heroku
 ```
 1. Create your own Heroku account (It's free!)
 2. Download Heroku CLI
@@ -108,7 +108,7 @@ https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c1
 ```
 
 
-###Note
+### Note
 The tutorial is published on 2019, Solidity has changed so that some guidelines are deprecated. 
 
 Eg: the method of enabling MetaMask, the method of writing the constructor and so on. 
