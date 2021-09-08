@@ -98,6 +98,15 @@ https://docs.binance.org/smart-chain/developer/deploy/truffle.html
 https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c111ab2
 ```
 
+###To deploy using Heroku
+```
+1. Create your own Heroku account (It's free!)
+2. Download Heroku CLI
+3. Push your code to git repo 
+4. heroku create ${YOUR_APP_NAME}
+5. git push heroku master
+```
+
 
 ###Note
 The tutorial is published on 2019, Solidity has changed so that some guidelines are deprecated. 
