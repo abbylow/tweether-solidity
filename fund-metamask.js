@@ -1,4 +1,4 @@
-const receiver = ""; // replace this with your own Metamask wallet
+const receiver = ""; // TODO: replace this with your own Metamask wallet
 const amount = web3.utils.toWei("1", 'ether');
 
 module.exports = async function(callback) {

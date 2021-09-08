@@ -1,6 +1,10 @@
-Get Started
+# What is this project (Tweether) about?
+This is a tutorial project to build a decentralized, uncensorable Twitter clone using Solidity.
+[Tutorial link](https://www.ludu.co/course/ethereum/interface-with-react)
 
-To start local ethereum
+##How to run this project
+
+To start local ethereum (ensure this is running at the background during development)
 ```
 ganache-cli 
 ```
@@ -9,12 +13,11 @@ To deploy the contracts
 ```
 truffle migrate
 
-// How to deploy only one migration file without touching the rest of migration files?
-// -f means "force" and 5 refers to the fifth migration file
-truffle migrate -f 5
+// To deploy only one migration file without touching the rest of migration files
+truffle migrate -f 5 // -f means "force" and 5 refers to the fifth migration file
 
 // deploy to the other network
-truffle migrate --network ropsten
+truffle migrate --network testnet // testnet is the network name that we list in the truffle-config networks
 ```
 
 To run the user interface (Next App)
@@ -28,12 +31,15 @@ To run the test case
 truffle test
 ```
 
+To add the fund to your MetaMask wallet
+```
+npm run fund-metamask
+```
+
 To access the ganache server and run some commands
 ```
 truffle console
-```
 
-```truffle
 > const addresses = await web3.eth.getAccounts()
 > const sender = addresses[1]
 > const balance = await web3.eth.getBalance(sender)
@@ -43,7 +49,7 @@ truffle console
 > web3.eth.sendTransaction({ from: sender, to: receiver, value: amount })
 
 or 
-> web3.eth.sendTransaction({ from: addresses[1], to: YOUR_METAMASK_ADDRESS, value: web3.utils.toWei("90", "ether") })
+> web3.eth.sendTransaction({ from: addresses[1], to: ${YOUR_METAMASK_ADDRESS}, value: web3.utils.toWei("90", "ether") })
 
 ```
 
@@ -82,9 +88,20 @@ geth attach http://127.0.0.1:8546
 > eth.getBalance(YOUR_ADDRESS)
 ```
 
-Change to deploy the app to BSC Testnet because the Geth has sync issues
+###Issue
+When I use Geth to deploy, I met a sync issue so the wallet balance is always zero and can't get enough fund to deploy. 
+Thus, I decided to change to deploy the app to BSC Testnet. 
+
 ```
-Reference: 
+Deploy to BSC Testnet in few steps: 
 https://docs.binance.org/smart-chain/developer/deploy/truffle.html
 https://medium.com/spartanprotocol/how-to-connect-metamask-to-bsc-testnet-7d89c111ab2
 ```
+
+
+###Note
+The tutorial is published on 2019, Solidity has changed so that some guidelines are deprecated. 
+
+Eg: the method of enabling MetaMask, the method of writing the constructor and so on. 
+
+I have made some changes to solve these issues during the development (and leave some comments in the code too) 
