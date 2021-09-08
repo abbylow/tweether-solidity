@@ -1,0 +1,124 @@
+{
+  "contractName": "TweetherICO",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.10+commit.5a6ea5b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/token/TweetherICO.sol\":\"TweetherICO\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/token/TweetherICO.sol\":{\"keccak256\":\"0x79373b550669d97dc052b46c73165f1ba12d2db35a58d5699f4502ab1b44b0c7\",\"urls\":[\"bzzr://f463748fa23f33a420e6dae3ce5d3afd9723b4250f773d8cf5f28ae11e4c760e\",\"dweb:/ipfs/QmU3H6jjH1roN4WtkWFgoFktaBKPKxXmABUgnBc4ZhzVYo\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72305820b4becae2f4f42664d6ba68f6303c35b4ad24d8b0dd6fc089cb0b2eef438cf2c864736f6c634300050a0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72305820b4becae2f4f42664d6ba68f6303c35b4ad24d8b0dd6fc089cb0b2eef438cf2c864736f6c634300050a0032",
+  "sourceMap": "26:25:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:25:1;;;;;;;",
+  "deployedSourceMap": "26:25:1:-;;;;;",
+  "source": "pragma solidity ^0.5.10;\n\ncontract TweetherICO {\n\n}",
+  "sourcePath": "/Users/sg99019ml/Abby/tweether/contracts/token/TweetherICO.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/token/TweetherICO.sol",
+    "exportedSymbols": {
+      "TweetherICO": [
+        47
+      ]
+    },
+    "id": 48,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 46,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 47,
+        "linearizedBaseContracts": [
+          47
+        ],
+        "name": "TweetherICO",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 48,
+        "src": "26:25:1"
+      }
+    ],
+    "src": "0:51:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/token/TweetherICO.sol",
+      "exportedSymbols": {
+        "TweetherICO": [
+          47
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".10"
+          ]
+        },
+        "id": 46,
+        "name": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            47
+          ],
+          "name": "TweetherICO",
+          "nodes": [
+            null
+          ],
+          "scope": 48
+        },
+        "id": 47,
+        "name": "ContractDefinition",
+        "src": "26:25:1"
+      }
+    ],
+    "id": 48,
+    "name": "SourceUnit",
+    "src": "0:51:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.10+commit.5a6ea5b1.Emscripten.clang"
+  },
+  "networks": {
+    "1631084710917": {
+      "events": {},
+      "links": {},
+      "address": "0xBAC51034067407fbAfb2d4c153Ef41a465e45d43",
+      "transactionHash": "0xc32b220016e76d8f24bf68b01fb631f338174e4051118b5f2b9318ac90809c0d"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-08T17:02:07.843Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
